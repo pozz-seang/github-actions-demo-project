@@ -19,8 +19,9 @@ jobs:
 
       - uses: docker/build-push-action@v5
         with:
+          context: .
           push: true
-          tags: testapp:latest
+          tags: pozzseang/testapp:latest
 
       - name: Deploy VPS
         uses: appleboy/ssh-action@v1.0.3
@@ -29,7 +30,10 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            docker pull testapp:latest
+            docker pull pozzseang/testapp:latest
             docker stop testapp || true
             docker rm testapp || true
-            docker run -d -p 3000:3000 --name testapp testapp:latest
+            docker run -d \
+              --name testapp \
+              -p 3000:3000 \
+              pozzseang/testapp:latest
