@@ -23,4 +23,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: pozzseang/flamboyant_bardeen:latest
+          tags: pozzseang/testapp:latest
