@@ -10,30 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Source
+        uses: actions/checkout@v4
 
-      - uses: docker/login-action@v3
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - uses: docker/build-push-action@v5
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: pozzseang/testapp:latest
-
-      - name: Deploy VPS
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            docker pull pozzseang/testapp:latest
-            docker stop testapp || true
-            docker rm testapp || true
-            docker run -d \
-              --name testapp \
-              -p 3000:3000 \
-              pozzseang/testapp:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/testapp:latest
