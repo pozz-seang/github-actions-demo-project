@@ -1,35 +1,29 @@
 {
-  "name": "recipe-api",
-  "version": "1.2.2",
-  "description": "Node JS API for Recipes",
+  "name": "baby-x-tscode",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "dev": "npm run start --stage local",
-    "start": "node --require ts-node/register src/index.ts",
-    "build:clean": "rm -rf ./dist/*; rm ./dist/*; mkdir ./dist/logs;",
-    "build:config": "cp ./src/config.json ./dist/config.json; cp ./package.json ./dist/package.json",
-    "build": "npm run build:clean; npm run build:config; tsc --skipLibCheck;"
+    "start": "node index.js",
+    "test": "nodemon index.js",
+    "tg": "nodemon  --ignore 'data/*' utils/telegram.js",
+    "tgn": "node utils/telegram.js"
   },
-  "author": "Tom Shaw",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.24.4",
-    "@babel/preset-env": "^7.24.4",
-    "@types/jest": "^29.5.12",
-    "@types/node": "^22.4.0",
-    "@types/supertest": "^6.0.2",
-    "babel-jest": "^29.7.0",
-    "jest": "^29.7.0",
-    "superagent": "^8.1.2",
-    "supertest": "^6.3.4",
-    "ts-jest": "^29.1.2",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.4.4"
-  },
+  "description": "",
   "dependencies": {
-    "body-parser": "^1.20.1",
-    "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "axios": "^1.7.8",
+    "data": "^0.6.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.5",
+    "node-fetch": "^3.3.2",
+    "node-telegram-bot-api": "^0.66.0",
+    "nodemon": "^3.1.7",
+    "path": "^0.12.7",
+    "pdfkit": "^0.15.1"
   }
 }
