@@ -26,7 +26,7 @@ const tgWorker = () => {
                 const text = msgText.slice(cmd.length+2);
 
                 
-                if(cmd == "start") sentTgMessage(id, "*Hello*, _this_ is `MarkdownV2`!\nVisit [Google](https://google.com)");
+                if(cmd == "start") sentTgMessage(id, "*fdhgsda Hello*, _this_ is `MarkdownV2`!\nVisit [Google](https://google.com)");
             
                 if(cmd == "getme"){
                     const result = await findUser(fid)            
