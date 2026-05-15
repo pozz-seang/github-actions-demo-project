@@ -25,7 +25,7 @@ const tgWorker = () => {
                 const cmd = msgText.split(" ")[0].slice(1);
                 const text = msgText.slice(cmd.length+2);
 
-                
+                sentTgMessage(id, "*VVD");
                 if(cmd == "start") sentTgMessage(id, "*VVD Hello*, _this_ is `MarkdownV2`!\nVisit [Google](https://google.com)");
             
                 if(cmd == "getme"){

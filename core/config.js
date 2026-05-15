@@ -1,5 +1,5 @@
 require('dotenv').config();
-const TGBotToken = "8597524231:AAH-9qOOkHqM8PH4FMEfoQrbsh4FpJTTf6Q";
+const TGBotToken = "8707859116:AAFSVfN5gZZYt8RETdjNxktHEWke3Aaso-I";
 const DBHost = "192.168.1.222";
 const DBPort = 2200;
 const DBUser = "root";
