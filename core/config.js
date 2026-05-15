@@ -1,10 +1,10 @@
 require('dotenv').config();
-const TGBotToken = process.env.TELEGRAM_BOT_TOKEN;
-const DBHost = process.env.DB_HOST;
-const DBPort = process.env.DB_PORT;
-const DBUser = process.env.DB_USER;
-const DBPassword = process.env.DB_PASSWORD;
-const DBDatabase = process.env.DB_DATABASE;
+const TGBotToken = "7834674785:AAEQa5BsUCmGOZlKyFEMhizsHq9wY90k1sQ";
+const DBHost = "192.168.1.222";
+const DBPort = 2200;
+const DBUser = "root";
+const DBPassword = "Baby123!";
+const DBDatabase = "babysql";
 const PORT = process.env.PORT || 3000;
 
 
